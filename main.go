@@ -11,7 +11,8 @@ import (
 func main() {
 	r := gin.Default()
 	DB := db.InitDB()
-	user.Routes(r,DB)
+	user.Routes(r, DB)
+
 	r.GET("/api/", func(ctx *gin.Context) { ctx.JSON(http.StatusOK, gin.H{"message": "Hello"}) })
 	r.Run()
 }

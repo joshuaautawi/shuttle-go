@@ -10,6 +10,7 @@ func Routes(route *gin.Engine, db *gorm.DB) {
 	serviceRepository := NewService(userRepository)
 	userHandler := NewBookHandler(serviceRepository)
 	user := route.Group("/users")
+
 	user.GET("", userHandler.GetUsers)
 	user.POST("")
 
